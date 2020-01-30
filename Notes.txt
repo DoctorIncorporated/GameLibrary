@@ -1,0 +1,2 @@
+npm install handlebars@4.5.3
+//Jordan used it to make "localhost:5000/games" display properly, I uninstalled it and it still worked
