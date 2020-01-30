@@ -15,3 +15,9 @@ git push
 //---------------------------------------------------------------------
 ##-To Update Existing Workspace
 git pull (((?)))origin master(((?)))
+//---------------------------------------------------------------------
+##-To Use VS Code
+Stage all chages (-+ Button-)
+Enter Commit Message (-Text Enter Field-)
+Commit (-Checkmark-)
+Push (-...- then -"Push"-)
