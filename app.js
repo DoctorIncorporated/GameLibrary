@@ -5,11 +5,16 @@ var methodOverride = require('method-override');
 var session = require('express-session');
 var flash = require('connect-flash');
 var bodyParser = require('body-parser');
+var passport = require('passport');
 var mongoose = require('mongoose');
+var db = require('./helper/database');
 
 //load routes
 var games = require('./routes/games');
 var users = require('./routes/users');
+
+//load passport
+require('./config/passport')(passport);
 
 //connect to mongoose
 mongoose.connect('mongodb://localhost:27017/gamelibrary',{
@@ -22,7 +27,6 @@ mongoose.connect('mongodb://localhost:27017/gamelibrary',{
 });
 
 //require method override
-//app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('_method'));
 
 //this code sets up template engine as express handlebars
@@ -40,6 +44,10 @@ app.use(session({
     resave:true,
     saveUninitialized:true
 }));
+
+//initializes passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Setup for flash messaging
 app.use(flash());
@@ -67,6 +75,9 @@ app.get('/about', function(req, res){
 //use our routes
 app.use('/game', games);
 app.use('/users', users);
+
+//connects server to port
+var port = process.env.PORT || 5000;
 
 //connects server to port
 app.listen(5000, function(){
