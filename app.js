@@ -17,7 +17,7 @@ var users = require('./routes/users');
 require('./config/passport')(passport);
 
 //connect to mongoose
-mongoose.connect('mongodb://localhost:27017/gamelibrary',{
+mongoose.connect('db.mongoURI',{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(function(){
@@ -57,6 +57,7 @@ app.use(function(req,res,next){
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.user = req.user || null;
     next();
 })
 
