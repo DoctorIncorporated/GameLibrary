@@ -6,7 +6,6 @@ if(process.env.NODE_ENV === "production"){
 }
 else{
     module.exports ={
-        mongoURI:"mongodb://localhost:" + process.env.PORT + "/GameLibrary"
-        //mongoURI:"mongodb://localhost:27017/GameLibrary"
+        mongoURI:"mongodb://localhost:27017/GameLibrary"
     }
 }
