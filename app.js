@@ -17,7 +17,7 @@ var users = require('./routes/users');
 require('./config/passport')(passport);
 
 //connect to mongoose
-mongoose.connect('db.mongoURI',{
+mongoose.connect(db.mongoURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(function(){
