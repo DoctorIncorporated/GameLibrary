@@ -17,7 +17,7 @@ var users = require('./routes/users');
 require('./config/passport')(passport);
 
 //connect to mongoose
-mongoose.connect("mongodb+srv://HapShapIncorporated:nitsujSHAPPY2298%40%40%28%2A@web-api-for-games-f34dp.mongodb.net/test?retryWrites=true&w=majority",{
+mongoose.connect(db.mongoURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
 }).then(function(){
