@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
-var passprt = require('passport');
+var passport = require('passport');
 var router = express.Router();
 
 //load game model
@@ -60,6 +60,9 @@ router.post('/register', function(req,res){
 					res.redirect('/users/login');
 				}).catch(function(err){
 					console.log(err);
+					res.render('users/register',{
+                        errors:errors,
+                    });
 					return;
 				});
 			});

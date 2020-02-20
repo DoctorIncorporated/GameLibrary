@@ -71,7 +71,7 @@ router.post('/gameentry', ensureAuthenticated, function(req, res){
             description:req.body.description,
             user:req.user.id
         }
-        /*new */Game(newUser).save().then(function(){
+        new Game(newUser).save().then(function(){
             //Save game and redirects to game page
             req.flash('success_msg', 'Game Added Successfully');
             res.redirect('games');
