@@ -19,15 +19,18 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/game/gameentry/gameentryadd">Add Game</a>
-                    </li>                    
-                    {{/if}}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout">Logout</a>
+                    </li>
+                    {{else}}
                     <li class="nav-item">
                         <a class="nav-link" href="/users/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/users/register">Register</a>
                     </li>
-                    
+                    {{/if}}
                 </ul>
             </div>
         </div>
